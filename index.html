@@ -2,31 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="stylesheet" href="style.css">
-    <!-- to add Font Awesome Fonts -->
+    <title>Project 3: Instagrid</title>
+    <meta name="description" content="Instagrid">
+    <meta name="author" content="Ross McKinnon">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
 
   <body>
-
-
-    <i class="fa fa-spinner fa-pulse fa-3x"></i>
-    <button type="button" class="trigger">Submit</button>
-
+    <header>
+      <img src="images/instagrid-logo.svg" alt="Instagrid Logo" title="Instagrid" />
+    </header>
+    <nav>
+      <img src="images/instagrid-icon.svg" alt="Enter your search" title="Instagrid search" />
+      <form action="#" id="api-search">
+        <div>
+          <input type="text" name="hashTag" id="hashTag" placeholder="Enter hast-tag to search" />
+          <button id="submit-button"><i class="fa fa-search"></i></button>
+        </div>
+      </form>
+    </nav>
+    <article>
+      <img src="images/search-tags.svg" alt="hash-tag search" title="" class="show-hide" />
+      <ul class="api-list"></ul>
+    </article>
+    <aside>
+      <button class="uppercase" class="show-hide">load more</button>
+    </aside>
+    <footer>
+      <span>Copyright 2015 </span><span class="uppercase">instagrid</span>
+    </footer>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
-
-
-
-<!-- to keep elements on the same line -->
-<span></span>
-
-<!-- Responsive Design & CSS3 Properties -->
-<!-- Slide 21 -->
-<meta name="viewport" content="width=device-width, initial-scale=1">

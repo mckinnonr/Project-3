@@ -46,10 +46,8 @@ $(function() {
               var userComments = value.comments.count;
               var userLikes = value.likes.count;
 
-              console.log(imgLink);
-
-              apiItems += '<div class="container">';
-              apiItems += '<img src="' + imgLink + '" />';
+              apiItems += '<li>';
+              apiItems +=  '<img class="user-pic" src="' + imgLink + '" />';
                 apiItems += '<div class="metta-box">';
                   // on one line...
                   apiItems += '<div class="item1"><img src="' + userPic + '" /></div>';
@@ -62,7 +60,7 @@ $(function() {
                       apiItems += '</div>';
                   apiItems += '</div>';
                 apiItems += '</div>';
-              apiItems += '</div>';
+              apiItems += '</li>';
             });
          } else {
             apiItems += '<p style="margin-top: 18px;">Sorry, hash-tag not found.</p>';

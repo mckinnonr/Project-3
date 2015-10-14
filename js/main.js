@@ -7,15 +7,17 @@ $(function() {
        instagramUrl,
        $apiList = $('.api-list');
 
+   // hide the "load more" button to start
+   $('article img').show();
+   $('aside').hide();
+
    // when the form is submitted
    $('#api-search').on('submit', function(event) {
-
-      // not needed as there is no <form> default submit action
       event.preventDefault();
 
       // toggle the blank image page & "load more" button
-      $('.show-hide').toggle();
-      // $results.hide();
+      $('article img').hide();
+      $('aside').show();
 
       // reset all the things
       $apiList.empty();
@@ -46,11 +48,21 @@ $(function() {
 
               console.log(imgLink);
 
-              apiItems += '<li>' + '<img src="' + imgLink + '" />' + '</li>';
-              apiItems += '<li>' + '<img src="' + userPic + '" />' + '</li>';
-              apiItems += '<li>' + userName + '</li>';
-              apiItems += '<li>' + userComments + '</li>';
-              apiItems += '<li>' + userLikes + '</li>';
+              apiItems += '<div class="container">';
+              apiItems += '<img src="' + imgLink + '" />';
+                apiItems += '<div class="metta-box">';
+                  // on one line...
+                  apiItems += '<div class="item1"><img src="' + userPic + '" /></div>';
+                  // or multiple lines
+                  apiItems += '<div class="item2">';
+                    apiItems += userName;
+                    apiItems += '<div class="item2a">';
+                      apiItems += '<i class="fa fa-comments"></i>' + userComments + '   ';
+                      apiItems += '<i class="fa fa-heart"></i>' + userLikes;
+                      apiItems += '</div>';
+                  apiItems += '</div>';
+                apiItems += '</div>';
+              apiItems += '</div>';
             });
          } else {
             apiItems += '<p style="margin-top: 18px;">Sorry, hash-tag not found.</p>';

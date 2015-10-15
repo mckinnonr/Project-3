@@ -1,0 +1,130 @@
+// To import other scss files (underscore in front):
+@import "reset";
+@import "fonts";
+@import "variables";
+@import "mixin";
+
+
+body {
+  font-size: $small-text;
+  color: $color;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+header {
+  max-width: 200px;
+  margin: 20px;
+}
+nav {
+  padding: 50px;
+  background-image: url(../images/pattern.png);
+  img {
+    max-width: 100px;
+    display: block;
+    margin: auto;
+  }
+  div {
+    margin: 25px auto;
+  }
+  form {
+    display: flex;
+    // input {
+    //   padding-right: none;
+    //   border: 0;
+    //   margin-right: none;
+    // }
+    // button {
+    //   padding-left: none;
+    //   border: 0;
+    //   margin-left: none;
+    // }
+  }
+}
+article {
+  margin: 2%;
+  border: 3px solid lightgrey;
+  .api-list {
+    margin: 2%;
+    display:flex;
+    overflow: hidden;
+    width: 95%;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    @include bp(tablet) {
+      li {
+        width: 30%;
+        margin-bottom: 5px;
+      }
+    }
+    @include bp(desktop) {
+      li {
+       width: 22%;
+       margin-bottom: 5px;
+      }
+    }
+
+  }
+  li {
+    border: 3px solid lightgrey;
+  }
+  ul img {
+    width: 100%;
+  }
+  .metta-box {
+    border-top: 3px solid lightgrey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .item1 {
+      width:75px; height:75px;
+      border: 3px solid lightgrey;
+      border-radius:50%;
+      overflow:hidden;
+      margin:1rem;
+    }
+    .item2 {
+      display: flex;
+      flex-direction:column;
+      justify-content:center;
+      padding-right:1rem;
+      font-size: 2rem;
+      overflow: hidden;
+      @include bp(tablet) {
+        font-size: 1rem;
+      }
+      @include bp(desktop) {
+        font-size: 1rem;
+      }
+      .item2a {
+        flex-direction:row;
+        justify-content:right;
+        text-align:right;
+        font-size: 1.5rem;
+        @include bp(tablet) {
+          font-size: 1rem;
+        }
+        @include bp(desktop) {
+         font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+aside {
+  button {
+    display: block;
+    margin: 30px auto;
+    padding: 5px 30px;
+    background-color: #e24420;
+    color: white;
+  }
+}
+footer {
+  margin: 10px;
+  border-top: 1px solid lightgrey;
+  padding: 20px;
+  text-align: center;
+  color: lightgrey;
+}

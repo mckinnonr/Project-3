@@ -15,27 +15,27 @@
     </header>
     <nav>
       <img src="images/instagrid-icon.svg" alt="Enter your search" title="Instagrid search" />
-      <form action="#" id="api-search">
+      <form ng-submit="getPhotos($event)" action="#" id="api-searchg">
         <div>
           <input ng-model="hashTagName" type="text" name="hashTag" id="hashTag" placeholder="Enter hash-tag to search" />
-          <button ng-click="getPhotos($event)" id="submit-button"><i class="fa fa-search"></i></button>
+          <button id="submit-button"><i class="fa fa-search"></i></button>
         </div>
       </form>
     </nav>
     <article>
       <img ng-hide="posts.length" src="images/search-tags.svg" alt="hash-tag search" title="" />
+      <img ng-show="loading" src="images/ajax-loader.gif" alt="hash-tag search" title="" />
       <ul class="api-list">
 
         <li ng-repeat="post in posts">
-
-          <img class="user-pic" src="{{ post.images.standard_resolution.url }}" />
+          <img class="user-pic" ng-src="{{ post.images.standard_resolution.url }}" />
           <div class="metta-box">
             <div class="item1">
-              <img src="{{ post.user.profile_picture }}" />
+              <img ng-src="{{ post.user.profile_picture }}" />
             </div>
             <div class="item2"> {{ post.user.username }}
               <div class="item2a">
-                <i class="fa fa-comments">{{ post.comments.count }} </i>
+                <i class="fa fa-comments"> {{ post.comments.count }} </i>
                 <i class="fa fa-heart"> {{ post.likes.count }} </i>
               </div>
             </div>
